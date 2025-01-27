@@ -3,94 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高级图床</title>
+    <meta name="description" content="一个简单易用的图床工具">
+    <title>Github 图床</title>
+    <!-- 引入样式文件 -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dark.css" id="theme-style">
-    <link rel="stylesheet" href="lib/cropperjs/cropper.min.css">
-    <!-- 引入第三方库 -->
-    <script src="lib/compressorjs/compressor.min.js"></script>
-    <script src="lib/cropperjs/cropper.min.js"></script>
-    <script src="lib/watermark/watermark.min.js"></script>
 </head>
 <body>
-    <!-- 顶部导航 -->
-    <nav class="nav-bar">
-        <div class="nav-brand">高级图床</div>
-        <div class="nav-menu">
-            <button id="uploadBtn">上传图片</button>
-            <button id="galleryBtn">图片库</button>
-            <button id="settingBtn">设置</button>
-            <button id="themeToggle">切换主题</button>
+    <div class="container">
+        <!-- 上传区域 -->
+        <div class="upload-area">
+            <h1>Github 图床</h1>
+            <!-- imgloc上传组件 -->
+            <script 
+                async 
+                src="//imgloc.com/sdk/pup.js" 
+                data-url="https://imgloc.com/upload" 
+                data-auto-insert="html-embed" 
+                data-palette="clear">
+            </script>
         </div>
-    </nav>
-
-    <!-- 主上传区域 -->
-    <div class="upload-container" id="uploadContainer">
-        <div class="upload-area" 
-             id="dropZone"
-             ondrop="handleDrop(event)" 
-             ondragover="handleDragOver(event)">
-            <div class="upload-prompt">
-                <i class="upload-icon"></i>
-                <p>拖拽文件到这里 或 点击上传</p>
-                <p class="upload-tip">支持：JPG、PNG、GIF等图片格式</p>
-            </div>
-            <input type="file" 
-                   id="fileInput" 
-                   multiple 
-                   accept="image/*" 
-                   style="display: none;">
-        </div>
-
-        <!-- 图片处理工具栏 -->
-        <div class="image-tools" id="imageTools">
-            <button data-tool="compress">压缩</button>
-            <button data-tool="crop">裁剪</button>
-            <button data-tool="rotate">旋转</button>
-            <button data-tool="watermark">水印</button>
-            <button data-tool="convert">格式转换</button>
-            <button data-tool="resize">调整尺寸</button>
-        </div>
-
-        <!-- 预览区域 -->
-        <div class="preview-area" id="previewArea">
-            <!-- 预览内容将通过JS动态添加 -->
-        </div>
-
-        <!-- 上传进度 -->
-        <div class="progress-container" id="progressContainer">
-            <div class="progress-bar" id="progressBar"></div>
+        
+        <!-- 图片展示区域 -->
+        <div class="gallery" id="imageGallery">
+            <!-- 图片将在这里动态显示 -->
         </div>
     </div>
 
-    <!-- 图片库 -->
-    <div class="gallery-container" id="galleryContainer">
-        <div class="gallery-filters">
-            <select id="storageFilter">
-                <option value="all">全部存储</option>
-                <option value="github">GitHub</option>
-                <option value="qiniu">七牛云</option>
-                <option value="aliyun">阿里云</option>
-            </select>
-            <input type="text" id="searchInput" placeholder="搜索图片...">
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- 图片将通过JS动态加载 -->
-        </div>
-    </div>
-
-    <!-- 设置面板 -->
-    <div class="settings-panel" id="settingsPanel">
-        <!-- 设置选项将通过JS动态加载 -->
-    </div>
-
-    <!-- 加载核心JS -->
-    <script src="assets/js/upload.js"></script>
-    <script src="assets/js/process.js"></script>
-    <script src="assets/js/storage.js"></script>
-    <script src="assets/js/preview.js"></script>
-    <script src="assets/js/link.js"></script>
-    <script src="assets/js/user.js"></script>
-    <script src="assets/js/security.js"></script>
+    <!-- 引入功能脚本 -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // 初始化图片处理器
+        new ImageProcessor();
+    </script>
 </body>
-</html> 
+</html>
