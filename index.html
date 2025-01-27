@@ -2,57 +2,184 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="一个简单易用的图床工具">
-    <title>Github 图床</title>
-    <!-- 引入样式文件 -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Euphoria Y & CNQH_Guoshifu の图床</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://example.com/your-background-image.jpg'); /* 替换为您的背景图片URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        /* 顶部样式 */
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-bar h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .top-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .top-bar button:hover {
+            background-color: #e64a19;
+        }
+
+        /* 中部内容样式 */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 30%;
+            height: auto;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* 底部样式 */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .footer div {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer div a {
+            color: white;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .footer div a:hover {
+            text-decoration: underline;
+        }
+
+        /* 鼠标样式 */
+        body {
+            cursor: url('https://example.com/your-cursor.png'), auto; /* 替换为您的鼠标指针图片URL */
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .gallery img {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 上传区域 -->
-        <div class="upload-area">
-            <h1>Github 图床</h1>
-            <!-- imgloc上传组件 -->
-            <script 
-                async 
-                src="//imgloc.com/sdk/pup.js" 
-                data-url="https://imgloc.com/upload" 
-                data-auto-insert="html-embed" 
-                data-palette="clear">
-            </script>
+    <!-- 顶部 -->
+    <div class="top-bar">
+        <h1>Euphoria Y & CNQH_Guoshifu の图床</h1>
+        <button id="create-album">创建相册</button>
+    </div>
+
+    <!-- 中部内容 -->
+    <div class="gallery">
+        <img src="https://example.com/image1.jpg" alt="Image 1" onclick="window.open('https://example.com/image1.jpg', '_blank')">
+        <img src="https://example.com/image2.jpg" alt="Image 2" onclick="window.open('https://example.com/image2.jpg', '_blank')">
+        <img src="https://example.com/image3.jpg" alt="Image 3" onclick="window.open('https://example.com/image3.jpg', '_blank')">
+        <img src="https://example.com/image4.jpg" alt="Image 4" onclick="window.open('https://example.com/image4.jpg', '_blank')">
+        <img src="https://example.com/image5.jpg" alt="Image 5" onclick="window.open('https://example.com/image5.jpg', '_blank')">
+        <img src="https="https://example.com/image6.jpg" alt="Image 6" onclick="window.open('https://example.com/image6.jpg', '_blank')">
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div>
+            <span>Powered by </span><a href="https://example.com" target="_blank">Euphoria Y & CNQH_Guoshifu</a>
         </div>
-        
-        <!-- 图片展示区域 -->
-        <div class="gallery" id="imageGallery">
-        <img src="https://i.imgs.ovh/2025/01/27/br6d.png" alt="br6d.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/bfcO.png" alt="bfcO.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/bjG6.png" alt="bjG6.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/baMp.png" alt="baMp.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/bZLc.png" alt="bZLc.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/byw9.png" alt="byw9.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/bCHm.png" alt="bCHm.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/b7AF.png" alt="b7AF.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/b07Q.png" alt="b07Q.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VNdX.png" alt="VNdX.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/V36U.png" alt="V36U.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/V1jH.png" alt="V1jH.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VXhN.png" alt="VXhN.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VBMA.png" alt="VBMA.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VxS4.png" alt="VxS4.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VmwC.png" alt="VmwC.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VGHq.png" alt="VGHq.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/Vhzt.png" alt="Vhzt.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/VI7a.png" alt="VI7a.png" border="0">
-	<img src="https://i.imgs.ovh/2025/01/27/Vt5h.png" alt="Vt5h.png" border="0">
+        <div>
+            <span>ICP备案信息: </span><a href="https://beian.miit.gov.cn" target="_blank">京ICP备XXXXXXXX号</a>
+        </div>
+        <div>
+            <img src="https://example.com/imgsrc-logo.png" alt="Imgsrc Logo" style="width: 50px; height: auto;">
+        </div>
+        <div id="ip-info">
+            <!-- IP信息将通过JavaScript获取并显示 -->
         </div>
     </div>
 
-    <!-- 引入功能脚本 -->
-    <script src="assets/js/script.js"></script>
+    <!-- JavaScript -->
     <script>
-        // 初始化图片处理器
-        new ImageProcessor();
+        // 获取IP信息
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                // 使用第三方API获取IP所在地和天气信息
+                return fetch(`https://ipapi.co/${ip}/json/`)
+                    .then(response => response.json())
+                    .then(location => {
+                        return { ip: ip, location: location };
+                    });
+            })
+            .then(data => {
+                const ipInfoDiv = document.getElementById('ip-info');
+                ipInfoDiv.innerHTML = `
+                    <span>访问IP: ${data.ip}</span><br>
+                    <span>IP所在地: ${data.location.city}, ${data.location.region}, ${data.location.country_name}</span><br>
+                    <span>当地时间: ${new Date().toLocaleString('zh-CN', { timeZone: data.location.timezone })}</span>
+                `;
+                // 获取天气信息
+                return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data.location.city}&appid=YOUR_OPENWEATHER_API_KEY&units=metric&lang=zh_cn`)
+                    .then(response => response.json())
+                    .then(weather => {
+                        ipInfoDiv.innerHTML += `<span>天气: ${weather.weather[0].description}, ${weather.main.temp}°C</span>`;
+                    });
+            })
+            .catch(error => {
+                console.error('Error fetching IP or weather information:', error);
+            });
+
+        // 鼠标指针样式
+        document.body.style.cursor = 'url("https://example.com/your-cursor.png"), auto'; // 替换为您的鼠标指针图片URL
     </script>
 </body>
 </html>
