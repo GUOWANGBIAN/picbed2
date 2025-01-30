@@ -216,9 +216,9 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // 验证成功后的逻辑
+                    document.getElementById('cf-turnstile').style.display = 'none';
                 } else {
-                    // 验证失败后的逻辑
+                    window.location.href = 'https://www.zhizhudh.com/sitetag/volumeshader_bm';
                 }
             })
             .catch(error => {
